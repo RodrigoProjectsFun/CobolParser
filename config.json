@@ -1,0 +1,75 @@
+{
+    "ignore_blocks": [
+        {
+            "name": "main_header",
+            "start_condition": "^\\s*\\*{10,}",
+            "end_condition": "^\\s*-{10,}",
+            "end_count": 2
+        }
+    ],
+    "card_record": {
+        "identifier": "- TARJETA",
+        "fields": {
+            "card_number": {
+                "line_index": 0,
+                "start": 18,
+                "end": 34
+            },
+            "card_name": {
+                "line_index": 0,
+                "start": 36,
+                "end": null
+            }
+        }
+    },
+    "operation_record": {
+        "start_regex": "^\\s*(?:\\d{6})?\\s*\\d{2}\\s+I\\.N\\.T",
+        "fields": {
+            "operacion_id": {
+                "line_index": 0,
+                "start": 8,
+                "end": 15
+            },
+            "importe_original": {
+                "line_index": 0,
+                "start": 38,
+                "end": 49
+            },
+            "cuenta_afectada": {
+                "line_index": 0,
+                "start": 91,
+                "end": 114
+            },
+            "fecha_operacion": {
+                "line_index": 0,
+                "start": 115,
+                "end": 125
+            },
+            "terminal_data": {
+                "line_index": 1,
+                "start": 8,
+                "end": 35
+            },
+            "establecimiento": {
+                "line_index": 1,
+                "start": 36,
+                "end": 60
+            },
+            "red_o_ciudad": {
+                "line_index": 1,
+                "start": 64,
+                "end": 76
+            },
+            "autorizacion": {
+                "line_index": 1,
+                "start": 86,
+                "end": 96
+            },
+            "referencia_visa": {
+                "line_index": 1,
+                "start": 105,
+                "end": null
+            }
+        }
+    }
+}
