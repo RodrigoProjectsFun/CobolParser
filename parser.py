@@ -81,7 +81,7 @@ class DynamicStateMachineParser:
     def process_file(self, file_path):
         self.previous_state = ParserState.SCANNING 
 
-        with open(file_path, 'r', encoding='utf-8') as file:
+        with open(file_path, 'r', encoding='utf-8', errors='replace') as file:
             for line in file:
                 clean_line = line.rstrip('\n')
 
