@@ -34,20 +34,35 @@ class DynamicStateMachineParser:
         self.current_card = None
         self.current_op_lines = []
         self.final_records = []
+        
+        # New variables to track global margin drift
+        self.global_drift = 0
+        self.drift_calculated = False
 
     def extract_fields(self, lines, field_config):
         extracted_data = {}
         for field_name, rules in field_config.items():
             line_idx = rules["line_index"]
-            start = rules["start"]
-            end = rules["end"]
+            start = rules.get("start")
+            end = rules.get("end")
+
+            if start is not None:
+                start += self.global_drift
+            if end is not None:
+                end += self.global_drift
 
             if line_idx < len(lines):
                 target_line = lines[line_idx]
                 if end is None:
-                    extracted_data[field_name] = target_line[start:].strip()
+                    if start < len(target_line):
+                        extracted_data[field_name] = target_line[start:].strip()
+                    else:
+                        extracted_data[field_name] = ""
                 else:
-                    extracted_data[field_name] = target_line[start:end].strip()
+                    if start < len(target_line):
+                        extracted_data[field_name] = target_line[start:end].strip()
+                    else:
+                        extracted_data[field_name] = ""
             else:
                 extracted_data[field_name] = None 
                 
@@ -116,6 +131,12 @@ class DynamicStateMachineParser:
                 # 4. NORMAL PROCESSING (Cards & Operations)
                 # ---------------------------------------------------------
                 if self.card_identifier in clean_line:
+                    if not self.drift_calculated:
+                        self.global_drift = clean_line.find(self.card_identifier)
+                        if self.global_drift < 0:
+                            self.global_drift = 0
+                        self.drift_calculated = True
+
                     self.flush_current_operation()
                     self.state = ParserState.SCANNING
                     self.current_card = self.extract_fields([clean_line], self.config["card_record"]["fields"])

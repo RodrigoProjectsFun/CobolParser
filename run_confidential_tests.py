@@ -1,7 +1,7 @@
 import json
 import logging
 import argparse
-from parser import DynamicStateMachineParser
+from parser import DynamicStateMachineParser, export_to_csv
 
 def generate_confidential_log(input_file, config_file='config.json', log_file='parser_confidential_log.txt'):
     # Setup logging to output to a file, masking printed sensitive elements
@@ -19,6 +19,9 @@ def generate_confidential_log(input_file, config_file='config.json', log_file='p
             
         parser = DynamicStateMachineParser(config)
         records = parser.process_file(input_file)
+        
+        # Export the records to CSV as usual
+        export_to_csv(records, 'parsed_report.csv')
         
         logging.info("Parsing engine completed successfully without fatal exceptions.")
         logging.info(f"Total operational records extracted: {len(records)}")

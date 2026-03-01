@@ -1,0 +1,2 @@
+card_number,card_name,operacion_id,importe_original,cuenta_afectada,fecha_operacion,establecimiento,red_o_ciudad,autorizacion,referencia_visa,arn_number,additional_data,trailing_notes
+1234567890123456,,,23.00  SOL,AHO 194-36830982-0-10,14062025,PLIN-VANESSA BERROSPI,Visa Direct   PE,420829,516523243643,ARNNUMBER,,

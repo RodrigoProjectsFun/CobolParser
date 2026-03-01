@@ -1,0 +1,26 @@
+2026-03-01 12:46:02,296 - INFO - ==================================================
+2026-03-01 12:46:02,296 - INFO - Starting confidential parse test on target file...
+2026-03-01 12:46:02,296 - INFO - ==================================================
+2026-03-01 12:46:02,296 - INFO - Parsing engine completed successfully without fatal exceptions.
+2026-03-01 12:46:02,296 - INFO - Total operational records extracted: 1
+2026-03-01 12:46:02,296 - INFO - Global Margin Drift Detected: 16 spaces
+2026-03-01 12:46:02,296 - INFO - Total unique card clusters grouped: 1
+2026-03-01 12:46:02,296 - INFO - Total operations parsed: 1
+2026-03-01 12:46:02,297 - INFO - 
+--- Field Extraction Success Rates ---
+2026-03-01 12:46:02,297 - INFO -  - operacion_id: 0/1 successfully populated (0.00%)
+2026-03-01 12:46:02,297 - INFO -  - importe_original: 1/1 successfully populated (100.00%)
+2026-03-01 12:46:02,297 - INFO -  - cuenta_afectada: 1/1 successfully populated (100.00%)
+2026-03-01 12:46:02,297 - INFO -  - fecha_operacion: 1/1 successfully populated (100.00%)
+2026-03-01 12:46:02,297 - INFO -  - establecimiento: 1/1 successfully populated (100.00%)
+2026-03-01 12:46:02,297 - INFO -  - red_o_ciudad: 1/1 successfully populated (100.00%)
+2026-03-01 12:46:02,297 - INFO -  - autorizacion: 1/1 successfully populated (100.00%)
+2026-03-01 12:46:02,297 - INFO -  - referencia_visa: 1/1 successfully populated (100.00%)
+2026-03-01 12:46:02,297 - INFO -  - arn_number: 1/1 successfully populated (100.00%)
+2026-03-01 12:46:02,297 - INFO -  - additional_data: 0/1 successfully populated (0.00%)
+2026-03-01 12:46:02,297 - INFO -  - trailing_notes: 0/1 successfully populated (0.00%)
+2026-03-01 12:46:02,297 - INFO -  - card_number: 1/1 successfully populated (100.00%)
+2026-03-01 12:46:02,297 - INFO -  - card_name: 0/1 successfully populated (0.00%)
+2026-03-01 12:46:02,297 - INFO - ==================================================
+2026-03-01 12:46:02,297 - INFO - Testing Finalized. ZERO financial data recorded.
+2026-03-01 12:46:02,297 - INFO - ==================================================
